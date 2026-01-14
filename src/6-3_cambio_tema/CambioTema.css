@@ -1,0 +1,25 @@
+.tema-container {
+    padding: 20px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-demo {
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.card-demo.claro {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #ccc;
+}
+
+.card-demo.oscuro {
+    background-color: #111;
+    color: #fff;
+    border-color: #444;
+}

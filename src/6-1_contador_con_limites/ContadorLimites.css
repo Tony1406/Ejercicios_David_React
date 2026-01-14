@@ -1,0 +1,32 @@
+.contador-wrapper {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #1e1e1e;
+}
+
+.numero-grande {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.botones-ctrl button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.msg {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.alerta {
+    color: #ff6b6b;
+}
+
+.info {
+    color: #60a5fa;
+}

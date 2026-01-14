@@ -1,13 +1,16 @@
-// src/5-2_lista_tareas/ListaTareas.jsx
 import { useState } from 'react';
-import './ListaTareas.css'; // Importamos los estilos
+import './ListaTareas.css';
 
 function ListaTareas() {
   const [nuevaTarea, setNuevaTarea] = useState("");
   const [tareas, setTareas] = useState([]);
 
-  const agregarTarea = () => {
-    if (nuevaTarea.trim() === "") return;
+  const agregarTarea = (e) => {
+    e.preventDefault();
+
+    if (nuevaTarea.trim() === "") {
+      return;
+    }
 
     const tareaObjeto = {
       id: Date.now(),
@@ -19,9 +22,9 @@ function ListaTareas() {
     setNuevaTarea("");
   };
 
-  const toggleCompletada = (id) => {
+  const completarTarea = (idTarea) => {
     const tareasActualizadas = tareas.map(tarea => {
-      if (tarea.id === id) {
+      if (tarea.id === idTarea) {
         return { ...tarea, completada: !tarea.completada };
       }
       return tarea;
@@ -33,7 +36,7 @@ function ListaTareas() {
     <div className="lista-container">
       <h2>Lista de Tareas</h2>
       
-      <div className="input-group">
+      <form onSubmit={agregarTarea} className="input-group">
         <input 
           type="text" 
           className="input-tarea"
@@ -41,24 +44,20 @@ function ListaTareas() {
           onChange={(e) => setNuevaTarea(e.target.value)}
           placeholder="Escribe una tarea..."
         />
-        <button className="btn-add" onClick={agregarTarea}>
+        <button className="btn-add">
           Añadir
         </button>
-      </div>
+      </form>
 
       <ul className="lista">
         {tareas.map((tarea) => (
           <li 
             key={tarea.id} 
-            // Usamos template literals para añadir la clase 'completada' condicionalmente
-            className={`tarea-item ${tarea.completada ? 'completada' : ''}`}
+            className={tarea.completada ? 'completada' : ''}
           >
             <span>{tarea.texto}</span>
-            <button 
-              className="btn-accion"
-              onClick={() => toggleCompletada(tarea.id)}
-            >
-              {tarea.completada ? 'Desmarcar' : 'Completar'}
+            <button onClick={() => completarTarea(tarea.id)}>
+              {tarea.completada ? 'Marcar como no completada' : 'Marcar como completada'}
             </button>
           </li>
         ))}

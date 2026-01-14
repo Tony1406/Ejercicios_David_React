@@ -1,0 +1,48 @@
+.tareas-adv-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #252526;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-tarea {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.form-tarea input {
+    flex: 1;
+    padding: 8px;
+}
+
+.filtros-btn {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.filtros-btn button {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #444;
+}
+
+.filtros-btn button.activo {
+    background: #646cff;
+    color: white;
+    border-color: #646cff;
+}
+
+.lista-adv li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+.lista-adv li.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

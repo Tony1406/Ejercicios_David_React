@@ -9,16 +9,18 @@ function TarjetaUsuario({ nombre, apellidos, edadInicial, imagen }) {
   };
 
   return (
-    <div className="tarjeta-usuario">
+    <div className="tarjeta">
       <img 
         src={imagen} 
         alt="Perfil" 
-        style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} 
+        className="foto-perfil"
       />
       <h3>{nombre} {apellidos}</h3>
-      <p>Edad: <strong>{edad} años</strong></p>
+      <p>Edad: {edad} años</p>
       
-      <button onClick={cumplirAños}>Cumplir años</button>
+      <button onClick={cumplirAños}>
+        Cumplir años
+      </button>
     </div>
   );
 }
